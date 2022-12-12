@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,7 @@ namespace CircularQueues
             }
             queue_array[REAR] = element;
         }
-        public void reverse()
+        public void remove()
         {
             if (FRONT == -1)
             {
@@ -89,10 +90,66 @@ namespace CircularQueues
                     FRONT_position++;
                 }
                 FRONT_position = 0;
+                while(FRONT_position <= REAR_position)
+                {
+                    Console.Write(queue_array[FRONT_position]  +"   ");
+                    FRONT_position++;
+
+                }
+                Console.WriteLine();
             }
         }
         static void Main(string[] args)
         {
+            Program queue = new Program();
+            char ch;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Menu");
+                    Console.WriteLine("1. Implementasi insert operation");
+                    Console.WriteLine("2. Implementasi deleted operation");
+                    Console.WriteLine("3. Display values");
+                    Console.WriteLine("4. Exit");
+                    Console.Write("\nEnter you");
+                    Console.WriteLine("\nEnter your choice (1-4): " );
+                    ch = Convert.ToChar(Console.Read());
+                    Console.WriteLine();
+                    switch (ch)
+                    {
+                        case '1':
+                            {
+                                Console.Write("Enter a number:  ");
+                                int num = Convert.ToInt32(System.Console.ReadLine());
+                                Console.WriteLine();
+                                queue.insert(num);
+                            }
+                            break;
+                        case '2':
+                            {
+                                queue.remove();
+                            }
+                            break ;
+                        case '3':
+                            {
+                                queue.display();
+                            }
+                            break;
+                        case '4':
+                            return;
+                            default:
+                            {
+                                Console.WriteLine("invalid option");
+                            }
+                            break;
+                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("check for the values entered.");
+                }
+            }
         }
     }
 }
