@@ -43,8 +43,10 @@ namespace CircularQueues
         {
             if (FRONT == -1)
             {
-                Console.WriteLine()
+                Console.WriteLine("Queue underflow\n");
+                return;
             }
+            Console.WriteLine();
         }
         static void Main(string[] args)
         {
