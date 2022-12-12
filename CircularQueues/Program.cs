@@ -17,6 +17,11 @@ namespace CircularQueues
            REAR  = -1;
 
         }
+
+        public void intsert(int element)
+        {
+
+        }
         static void Main(string[] args)
         {
         }
