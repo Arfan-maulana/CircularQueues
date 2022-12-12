@@ -66,7 +66,30 @@ namespace CircularQueues
         {
             int FRONT_position = FRONT;
             int REAR_position = REAR;
-
+            if (FRONT == -1)
+            {
+                Console.WriteLine("Queue is empty");
+                return;
+            }
+            Console.WriteLine("\nElenent in the queue are ................\n");
+                if(FRONT_position <=REAR_position)
+            {
+                while (FRONT_position <= REAR_position)
+                {
+                    Console.Write(queue_array[FRONT_position] + " ");
+                    FRONT_position++;
+                }
+                Console.WriteLine();
+            }
+                else
+            {
+                while (FRONT_position <= max - 1)
+                {
+                    Console.Write(queue_array[FRONT_position] + " ");
+                    FRONT_position++;
+                }
+                FRONT_position = 0;
+            }
         }
         static void Main(string[] args)
         {
