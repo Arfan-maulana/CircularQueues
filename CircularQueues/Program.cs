@@ -32,10 +32,19 @@ namespace CircularQueues
             }
             else
             {
-                if (REAR == max -1)
+                if (REAR == max - 1)
                     REAR = 0;
+                else
+                    REAR = +1;
             }
-
+            queue_array[REAR] = element;
+        }
+        public void reverse()
+        {
+            if (FRONT == -1)
+            {
+                Console.WriteLine()
+            }
         }
         static void Main(string[] args)
         {
