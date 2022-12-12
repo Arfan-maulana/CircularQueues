@@ -114,7 +114,7 @@ namespace CircularQueues
                     Console.WriteLine("4. Exit");
                     Console.Write("\nEnter you");
                     Console.WriteLine("\nEnter your choice (1-4): " );
-                    ch = Convert.ToChar(Console.Read());
+                    ch = Convert.ToChar(Console.ReadLine());
                     Console.WriteLine();
                     switch (ch)
                     {
